@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+.tela{
+    color: #d1a8e0;
+}
+.titulo{
+    color: #d1a8e0;
+}
+
+.links{
+    color: #d1a8e0;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-fluid{
+    margin-top: -30px;
+    margin-left: 110px;
+}
+
+#mochila{
+    margin-left: 65px;
+    margin-top: 50px;
+}

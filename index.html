@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="teste.css" media="screen" />
+	<title>Aula</title>
+	<style type="text/css">
+		html, body, * {
+			margin: 0;
+			padding: 0;
+		}
+		.tela {
+			display: none;
+		}
+		.tela.active {
+			display: block;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		a.active {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		#bottom-bar {
+			background: black;
+			bottom: 0;
+			height: 70px;
+			position: fixed;
+			width: 100%;
+		}
+    </style>
+    
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<img src="fofo.png" class="img-fluid" alt="Imagem responsiva" width="40%" height="40%">
+<div id="container">
+	
+	<div class="tela " id="tela-1">
+		<h1>Tela 1</h1>
+	</div>
+
+	<div class="tela" id="tela-2">
+		<h1>Tela 2</h1>
+	</div>
+	
+	<div class="tela active" id="tela-3">
+    <img src="mochila.png" id="mochila" width="60%"  height="60%">
+    </div>
+
+</div>
+
+<div id="bottom-bar">
+	<a class="links" href="#tela-1" data-target="tela-1">Desenhar</a>
+	<a class="links" href="#tela-2" data-target="tela-2">Colorir</a>
+    <a class="links" href="#tela-3" data-target="tela-3"class="active">Home</a>
+</div>
+
+<script type="text/javascript">
+	
+let links = document.querySelectorAll('#bottom-bar a')
+
+for (link of links) {
+	let target = link.getAttribute('data-target')
+
+	link.addEventListener('click', function() {
+		mudaTela(target)
+	})
+}
+
+
+function mudaTela(target) {
+	let tela_target = document.getElementById(target)
+	let link_target = document.querySelector('a[data-target="'+target+'"]')
+
+	document.querySelector('div.tela.active').classList.remove('active')
+	document.querySelector('a.active').classList.remove('active')
+
+	tela_target.classList.add('active')
+	link_target.classList.add('active')
+}
+
+</script>
+
+</body>
+</html>
